@@ -69,4 +69,10 @@
     .nav {
         padding: 0% !important;
     }
+   .header__title {
+     text-align: center !important;
+   }
+   .nav__item {
+     margin-left: 2rem !important;
+   }
  }
