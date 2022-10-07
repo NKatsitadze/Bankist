@@ -75,4 +75,7 @@
    .nav__item {
      margin-left: 2rem !important;
    }
+   .nav.sticky {
+     padding: 1rem 2rem !important;
+   }
  }
