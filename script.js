@@ -9,8 +9,6 @@ const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const sections = document.querySelectorAll('.section');
 
-
-
 const openModal = function (e) {
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
@@ -20,15 +18,11 @@ const openModal = function (e) {
 const closeModal = function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
-  
-
 };
 
 btnsOpenModal.forEach((arg) => {
     arg.addEventListener('click', openModal)
 })
-
-
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
@@ -39,9 +33,6 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-
-///////////////////////////////////////////
-///////////////////////////////////////////
 ///////////////////////////////////////////
 
 // Selecting elements
@@ -54,17 +45,12 @@ const allSections = document.querySelectorAll('.section');
 const allButtons = document.getElementsByTagName('button');
 const id = document.getElementById('logo');
 
-
-
 // Creating and inserting elements
-// .insertAdjacentHTML
 const message = document.createElement('div');
 message.classList.add('cookie-message');
 message.innerHTML = `We use Cookies for improvement <button class="btn btn--close-cookie"
 >Got it!</button>`;
-// header.before(message);
 header.insertAdjacentElement('afterbegin', message);
-
 
 // Deleting an element
 document.querySelector('.btn--close-cookie')
@@ -80,16 +66,11 @@ message.style.color = 'black'
 message.style.width = '100%';
 message.style.height = Number.parseFloat(  getComputedStyle(message).height) + 30 + 'px';
 
-
 // Attributes
 const logo = document.querySelector('.nav__logo');
 
 /////////////////////////////
-/////////////////////////////
-/////////////////////////////
 // Tabbed component
-/////////////////////////////
-/////////////////////////////
 /////////////////////////////
 
 const tabs = document.querySelectorAll('.operations__tab');
@@ -115,15 +96,12 @@ tabsContainer.addEventListener('click', function(e) {
   // Activate content area
   document.querySelector(`.operations__content--${clicked.dataset.tab}`)
   .classList.add('operations__content--active');
-
 });
 
-
-///////////////////////////////////
 ///////////////////////////////////
 // Adding sticky nav, with Intersection Observer API
 ///////////////////////////////////
-///////////////////////////////////
+
 const nav = document.querySelector('.nav');
 const navHeight = nav.getBoundingClientRect().height;
 
@@ -147,12 +125,8 @@ observer.observe(header);
 
 
 //////////////////////////////////
-//////////////////////////////////
 // Revealing sections with animations 
 //////////////////////////////////
-//////////////////////////////////
-// sections.forEach(s => s.classList.add('section--hidden'));
-// console.log(...sections)
 
 const revealSection = function(entries, observer) {
   const [entry] = entries;
@@ -174,14 +148,10 @@ allSections.forEach(function(s){
 
 
 ////////////////////////////////////
-////////////////////////////////////
 // Implementing Lazy Loading
-////////////////////////////////////
 ////////////////////////////////////
 
 const imgTargets = document.querySelectorAll('img[data-src]');
-// console.log(imgTargets)
-
 
 const loadImg = function(entries, observer) {
   const [entry] = entries;
@@ -202,15 +172,10 @@ const imgObserver = new IntersectionObserver(loadImg, {
 });
 imgTargets.forEach(img => imgObserver.observe(img));
 
-
-
-
-
-/////////////////////////////////////////
 /////////////////////////////////////////
 // Making Slider
 /////////////////////////////////////////
-/////////////////////////////////////////
+
 const slider = function () {
   const slides = document.querySelectorAll('.slide');
   const btnLeft = document.querySelector('.slider__btn--left');
@@ -219,7 +184,6 @@ const slider = function () {
   const maxSlide = slides.length;
   const dotContainer = document.querySelector('.dots');
 
-  //////////////////////////
   //////////////////////////
   // Functions
   const createDots = function () {
@@ -247,7 +211,6 @@ const slider = function () {
     );
   };
 
-  //////////////////////////
   //////////////////////////
   // Next and Previous slides
   const nextSlide = function () {
@@ -279,7 +242,6 @@ const slider = function () {
   };
   init();
 
-  //////////////////////////
   //////////////////////////
   // Event listeners
   btnRight.addEventListener('click', nextSlide);
