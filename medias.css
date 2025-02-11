@@ -73,9 +73,18 @@
      text-align: center !important;
    }
    .nav__item {
-     margin-left: 2rem !important;
+     margin-left: 1rem !important;
    }
    .nav.sticky {
      padding: 1rem 2rem !important;
+   }
+   .nav__link--btn {
+    padding: 0.3rem 2rem !important;
+   }
+   .operations__tab {
+    margin-right: 1rem !important;
+   }
+   .btn {
+    padding: 1rem 3rem !important;
    }
  }
